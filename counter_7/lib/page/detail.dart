@@ -28,19 +28,35 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Details"),
       ),
       body: Center(
-        child: ElevatedButton(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+          Card(
+          child: Container(
+          padding: EdgeInsets.all(10),
+          width: double.infinity,
+          child: Column(
+            children: [
+              Text(widget.title),
+              Text(widget.rating),
+              Text(widget.release),
+              Text(widget.review)
+            ],
+          ))),
+        ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text(widget.title),
+          child: Text("back"),
         ),
-      ),
-    );
+      ]),
+    ));
   }
 }
