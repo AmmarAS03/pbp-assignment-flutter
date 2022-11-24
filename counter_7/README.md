@@ -52,6 +52,7 @@ The stack data structure is used by the Navigator. The Navigator.push() method c
 
 Weekly Assignment 9
 1. Can we retrieve JSON data without creating a model first? If yes, is it better than creating a model before retrieving JSON data?
+
 There are two options to fetch Json data which are: 1. Write all the Json manually 2. Automate the process with code generation
 Ofcoure it is better for us to create a model before retrieveng Json data because it will save us so much time
 2. List the widgets that you used in this project and explain their functions.
@@ -63,7 +64,10 @@ Ofcoure it is better for us to create a model before retrieveng Json data becaus
 	- ListTile = Contains one to three lines of text optionally flanked by icons or other widgets, such as check boxes
 
 3. Explain the mechanism of retrieving data from json so it can be shown in Flutter.
+
 First, we must build a model for the JSON data and put it to a dart file. This data can be found on various sources, like Quicktype. The http package must then be added in order to execute the HTTP request. Run the command "flutter pub add http" on the project terminal to add it, then in the AndroidManifest.xml, add "" after the application tag to allow for internet access.
+
+Import the http package, dart:convert, and the model dart file into the page from which you wish to retrieve the data. Utilizing the Future widget and http, create a stateful widget and retrieve the JSON data. utilize the data-containing url to obtain. Use the model class's fromJson method to convert the data, then add the result to a list. Use the FutureBuilder function to show the data, where the future is the function that contains the data, and ListView.builder to produce the data representation for the builder.
 4. Explain how you implemented the checklist above.
 1. Input the Json data into quicktype and copy the code to a new model dart file in a separate folder
 2. Create another dart file in a different folder from the other new file to be the page
