@@ -35,7 +35,7 @@ Navigator.pushReplacement = Replace the current route of the navigator that most
 	- Styling = This deals with the theme, responsiveness, and sizing of the app.
 	- Interaction Models = These widgets are here to manage touch events and route users to different views in the application.
 	- Form = Container for grouping together multiple form field widgets.
-	- Scaffold -> Implements the basic Material Design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.
+	- Scaffold = Implements the basic Material Design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.
 3. Name the types of events that exist in flutter
 There are a lot of events that exists in flutter. These are some example : 
 PointerDownEvent, PointerMoveEvent, PointerUpEvent, PointerCancelEvent. Gestures can also dispatch multiple events, such as onTap, onTapDown, onTapUp, onHover, onFocusChange, onDoubleTap, onPressed, onLongPress, onHover, onVerticalDragStart, onHorizontalDragStart, onPanStart, and many more.
@@ -43,9 +43,30 @@ PointerDownEvent, PointerMoveEvent, PointerUpEvent, PointerCancelEvent. Gestures
 4. Explain how the Navigator works in "switching" pages of a Flutter application.
 The stack data structure is used by the Navigator. The Navigator.push() method can be used to change to a different path. A Route is added to the stack of routes that the Navigator manages using the push() method. What is the origin of the Route? Use a MaterialPageRoute instead of making your own because it transitions to the new route with a platform-specific animation. Using the pop() method, which removes the current Route from the stack of routes controlled by the Navigator, you can close the second route and go back to the first.
 
-Explain How you implemented the checklist Above
+5. Explain How you implemented the checklist Above
 1. Create two more dart files and also add a drawer to 3 files that existed
-2. Create a form on the Add Budget Info with input title
-3. ...
-4. ...
+2. Create a form on the Add Budget Info page with input for title, amount and also a save button
+3. Create a list to store the result where they will be a list
+4. In budget data, iterate through data from the list and show the result
 
+
+Weekly Assignment 9
+1. Can we retrieve JSON data without creating a model first? If yes, is it better than creating a model before retrieving JSON data?
+There are two options to fetch Json data which are: 1. Write all the Json manually 2. Automate the process with code generation
+Ofcoure it is better for us to create a model before retrieveng Json data because it will save us so much time
+2. List the widgets that you used in this project and explain their functions.
+	- Text = Displays text
+	- Styling = This deals with the theme, responsiveness, and sizing of the app.
+	- Interaction Models = These widgets are here to manage touch events and route users to different views in the application.
+	- Form = Container for grouping together multiple form field widgets.
+	- Scaffold = Implements the basic Material Design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.
+	- ListTile = Contains one to three lines of text optionally flanked by icons or other widgets, such as check boxes
+
+3. Explain the mechanism of retrieving data from json so it can be shown in Flutter.
+First, we must build a model for the JSON data and put it to a dart file. This data can be found on various sources, like Quicktype. The http package must then be added in order to execute the HTTP request. Run the command "flutter pub add http" on the project terminal to add it, then in the AndroidManifest.xml, add "" after the application tag to allow for internet access.
+4. Explain how you implemented the checklist above.
+1. Input the Json data into quicktype and copy the code to a new model dart file in a separate folder
+2. Create another dart file in a different folder from the other new file to be the page
+3. Create MyWatchListPage class and the contain is the same as the previous lab
+4. Create another new file for detail
+5. Create a new DetailsPage class with accepting parameter to pass the data
