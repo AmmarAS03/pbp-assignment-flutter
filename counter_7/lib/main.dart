@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import "package:counter_7/add.dart";
-import "package:counter_7/data.dart";
+import 'package:counter_7/page/add.dart';
+import 'package:counter_7/page/data.dart';
+import 'package:counter_7/page/mywatchlist.dart';
 
 void main() {
   runApp(const MyApp());
@@ -107,6 +108,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
+            ListTile(
+              title: const Text('My Watchlist'),
+              onTap: (){
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const MyWatchListPage()),
+                );
+              },
+            ),
           ],
         ),
       ),
@@ -134,11 +142,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Visibility(
               child: FloatingActionButton(
+                heroTag: null,
                 onPressed: _decrementCounter,
                 child: Icon(Icons.remove),
               ),
             ),
             FloatingActionButton(
+              heroTag: null,
               onPressed: _incrementCounter,
               child: Icon(Icons.add),
             ),
